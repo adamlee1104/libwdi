@@ -2,31 +2,31 @@
 ; Copyright (c) 2010 libusb-win32 (GNU LGPL)
 [Strings]
 DeviceName = "#DEVICE_DESCRIPTION#"
-VendorName = "#DEVICE_MANUFACTURER#"
+VendorName = "Vkinging DAQ Devices"
 SourceName = "#DEVICE_DESCRIPTION# Install Disk"
 DeviceID   = "#DEVICE_HARDWARE_ID#"
 DeviceGUID = "#DEVICE_INTERFACE_GUID#"
 
 [Version]
 Signature   = "$Windows NT$"
-Class       = "libusb-win32 devices"
+Class       = "Vkinging DAQ Devices"
 ClassGuid   = {EB781AAF-9C70-4523-A5DF-642A87ECA567}
-Provider    = "libusb-win32"
+Provider    = "Vkinging Inc."
 CatalogFile = #CAT_FILENAME#
 DriverVer   = #DRIVER_DATE#, #DRIVER_VERSION#
 
 [ClassInstall32]
-Addreg = libusb_class_install_add_reg
+Addreg = Vkinging_class_install_add_reg
 
 [libusb_class_install_add_reg]
-HKR,,,0,"libusb-win32 devices"
+HKR,,,0,"Vkinging DAQ Devices"
 HKR,,Icon,,-20
 
 [Manufacturer]
 %VendorName% = Devices, NT, NTAMD64, NTARM64
 
 ;--------------------------------------------------------------------------
-; libusb-win32 files
+; Vkinging DAQ Devices Files
 ;--------------------------------------------------------------------------
 
 [SourceDisksNames]
@@ -67,7 +67,7 @@ libusb0.dll, libusb0_x86.dll #LK_COMMA# #LK_DLL# #LK_COMMA# #LK_X86_DLL#
 libusb0.dll, libusb0_x86.dll #LK_COMMA# #LK_DLL# #LK_COMMA# #LK_X86_DLL#
 
 ;--------------------------------------------------------------------------
-; libusb-win32 device driver
+; Vkinging DAQ Devices Driver
 ;--------------------------------------------------------------------------
 
 [LIBUSB_WIN32_DEV.NT]
@@ -115,18 +115,18 @@ HKR,,DeviceInterfaceGUIDs,0x00010000,%DeviceGUID%
 ;HKR,,InitialConfigValue,0x00010001,<your config value>
 
 ;--------------------------------------------------------------------------
-; libusb-win32 service
+; Vkinging DAQ Devices Services
 ;--------------------------------------------------------------------------
 
 [libusb_add_service]
-DisplayName   = "libusb-win32 - Kernel Driver #DRIVER_DATE# #DRIVER_VERSION#"
+DisplayName   = "Vkinging DAQ Devices - Kernel Driver #DRIVER_DATE# #DRIVER_VERSION#"
 ServiceType   = 1
 StartType     = 3
 ErrorControl  = 0
 ServiceBinary = %12%\libusb0.sys
 
 ;--------------------------------------------------------------------------
-; libusb-win32 devices
+; Vkinging DAQ Devices
 ;--------------------------------------------------------------------------
 
 ; Hardware IDs in a 'Devices' section can be installed by libusb-win32
